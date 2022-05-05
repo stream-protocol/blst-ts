@@ -18,7 +18,9 @@
     "test": "yarn test:unit && yarn test:spec",
     "test:unit": "mocha test/unit/**/*.test.ts",
     "test:spec": "mocha 'test/spec/**/*.test.ts'",
-    "download-spec-tests": "node -r ts-node/register test/spec/downloadTests.ts"
+    "download-spec-tests": "node -r ts-node/register test/spec/downloadTests.ts",
+    "webpack": "cp ./blst/build/blst.wasm ./test/browser/ && npx webpack",
+    "webpack:serve": "cp ./blst/build/blst.wasm ./test/browser/ && npx webpack serve"
   },
   "repository": {
     "type": "git",
