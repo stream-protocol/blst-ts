@@ -1,12 +1,17 @@
-import {getBinaryPath} from "./scripts/paths";
-// eslint-disable-next-line
-export const blst: Blst = require(getBinaryPath());
+// export const blst: Blst = await import("./blst/build/blst.js");
+// @ts-ignore
+export const blst: Blst = require("../blst/build/blst.js");
 
-export interface Blst {
-  BLS12_381_G1: P1_Affine;
-  BLS12_381_NEG_G1: P1_Affine;
-  BLS12_381_G2: P2_Affine;
-  BLS12_381_NEG_G2: P2_Affine;
+interface MaybeAsyncModule {
+  initialized: Promise<void>;
+  onInitialized: (callback: () => void) => void;
+}
+
+export interface Blst extends Partial<MaybeAsyncModule> {
+  // BLS12_381_G1: P1_Affine;
+  // BLS12_381_NEG_G1: P1_Affine;
+  // BLS12_381_G2: P2_Affine;
+  // BLS12_381_NEG_G2: P2_Affine;
   SecretKey: SecretKeyConstructor;
   P1_Affine: P1_AffineConstructor;
   P2_Affine: P2_AffineConstructor;
@@ -14,8 +19,8 @@ export interface Blst {
   P2: P2Constructor;
   PT: PTConstructor;
   Pairing: PairingConstructor;
-  G1(): P1;
-  G2(): P2;
+  // G1(): P1;
+  // G2(): P2;
 }
 
 // blst.hpp types
