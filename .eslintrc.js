@@ -89,4 +89,5 @@ module.exports = {
       },
     },
   ],
+  "ignorePatterns": ["glue.js", "webpack.config.js"],
 };
