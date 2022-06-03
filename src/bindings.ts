@@ -1,5 +1,5 @@
 // export const blst: Blst = await import("./blst/build/blst.js");
-// @ts-ignore
+//@ts-ignore
 export const blst: Blst = require("../blst/build/blst.js");
 
 interface MaybeAsyncModule {

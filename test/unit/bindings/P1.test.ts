@@ -26,11 +26,6 @@ function run(): void {
 
     describe("P1", () => {
       it("From serialized", () => {
-        console.log(sk.to_lendian());
-        console.log(sk.to_bendian());
-        console.log(p1.serialize());
-        console.log(p1Affine.serialize());
-        console.log(new blst.P1(sample.p1).serialize());
         expectHex(new blst.P1(sample.p1).serialize(), sample.p1);
       });
       it("From compressed", () => {
