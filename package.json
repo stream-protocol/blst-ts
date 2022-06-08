@@ -19,7 +19,7 @@
     "test:unit": "mocha test/unit/**/*.test.ts",
     "test:spec": "mocha 'test/spec/**/*.test.ts'",
     "download-spec-tests": "node -r ts-node/register test/spec/downloadTests.ts",
-    "copy:wasm": "cp ./blst/build/blst.wasm ./test/browser/",
+    "copy:wasm": "cp ./prebuild/emscripten/blst.wasm ./test/browser/",
     "webpack": "yarn copy:wasm && npx webpack",
     "webpack:serve": "yarn copy:wasm && npx webpack serve"
   },
