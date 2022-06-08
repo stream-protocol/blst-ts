@@ -1,6 +1,18 @@
-// export const blst: Blst = await import("./blst/build/blst.js");
-//@ts-ignore
-export const blst: Blst = require("../blst/build/blst.js");
+export let blst: Blst;
+
+// Import & assign the respective binding module.
+switch (process.env["BINDING"]) {
+  case "emscripten":
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    blst = require("../blst/build/blst");
+    break;
+  case "swig":
+  default:
+    // eslint-disable-next-line no-case-declarations,@typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires
+    const {getBinaryPath} = require("./scripts/paths");
+    // eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-unsafe-call
+    blst = require(getBinaryPath());
+}
 
 interface MaybeAsyncModule {
   initialized: Promise<void>;

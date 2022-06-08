@@ -2,13 +2,11 @@
   "include": ["src", "test"],
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es6",
+    "target": "esnext",
     "module": "commonjs",
+    "moduleResolution": "node",
     "pretty": true,
-    "lib": [
-      "esnext.bigint",
-      "dom"
-    ],
+    "lib": ["esnext.bigint"],
 
     "strict": true,
     "alwaysStrict": true,
@@ -19,7 +17,6 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "allowUmdGlobalAccess": true,
 
     "declaration": true,
     "sourceMap": true,
