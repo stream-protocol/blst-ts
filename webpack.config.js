@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 
 const workingDir = path.resolve(__dirname);
@@ -18,6 +19,7 @@ const testFiles = Object.entries(testFilesMap)
     .flat();
 
 module.exports = {
+  target: "web",
   entry: testFiles,
   mode: "development",
   devServer: {
@@ -43,6 +45,7 @@ module.exports = {
       "buffer": require.resolve("buffer"),
       "assert": require.resolve("assert-browserify"),
       "path": require.resolve("path-browserify"),
+      "fs": false,
     }
   },
   output: {
@@ -51,5 +54,15 @@ module.exports = {
   },
   experiments: {
     topLevelAwait: true,
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.BINDING": JSON.stringify("emscripten"),
+    })
+  ],
+  ignoreWarnings: [
+    {
+      module: new RegExp("./src/bindings.ts"),
+    }
+  ]
 };
