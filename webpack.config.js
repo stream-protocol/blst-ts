@@ -2,14 +2,20 @@ const path = require("path");
 
 const workingDir = path.resolve(__dirname);
 const browserTestDir = path.join(workingDir, "test", "browser");
-const testFileNames = [
-    "bindings/blst-sample-case.test.ts",
-    "bindings/P1.test.ts",
-    "bindings/P2.test.ts",
-    "bindings/Pairing.test.ts",
-    "bindings/SecretKey.test.ts",
-];
-const testFiles = testFileNames.map(f => path.join(workingDir, "test", "unit", f));
+const testFilesMap = {
+  "bindings": [
+    "blst-sample-case.test.ts",
+    "P1.test.ts",
+    "P2.test.ts",
+    "Pairing.test.ts",
+    "SecretKey.test.ts",
+  ],
+  "lib": ["index.test.ts"],
+};
+const testFiles = Object.entries(testFilesMap)
+    .map(([dir, files]) => files
+        .map(f => path.join(workingDir, "test", "unit", dir, f)))
+    .flat();
 
 module.exports = {
   entry: testFiles,
