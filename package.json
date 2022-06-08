@@ -19,8 +19,9 @@
     "test:unit": "mocha test/unit/**/*.test.ts",
     "test:spec": "mocha 'test/spec/**/*.test.ts'",
     "download-spec-tests": "node -r ts-node/register test/spec/downloadTests.ts",
-    "webpack": "cp ./blst/build/blst.wasm ./test/browser/ && npx webpack",
-    "webpack:serve": "cp ./blst/build/blst.wasm ./test/browser/ && npx webpack serve"
+    "copy:wasm": "cp ./blst/build/blst.wasm ./test/browser/",
+    "webpack": "yarn copy:wasm && npx webpack",
+    "webpack:serve": "yarn copy:wasm && npx webpack serve"
   },
   "repository": {
     "type": "git",
@@ -63,7 +64,6 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
-    "@types/emscripten": "^1.39.6",
     "node-fetch": "^2.6.1",
     "node-gyp": "^8.4.0"
   }
