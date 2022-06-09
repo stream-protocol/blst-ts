@@ -32,8 +32,8 @@ export interface Blst extends Partial<MaybeAsyncModule> {
   P2: P2Constructor;
   PT: PTConstructor;
   Pairing: PairingConstructor;
-  // G1(): P1;
-  // G2(): P2;
+  G1(): P1;
+  G2(): P2;
 }
 
 // blst.hpp types

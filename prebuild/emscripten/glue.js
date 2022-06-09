@@ -948,6 +948,18 @@ Pairing.prototype['__destroy__'] = Pairing.prototype.__destroy__ = /** @suppress
   _emscripten_bind_Pairing___destroy___0(self);
 };
 
+// G1
+/** @suppress {undefinedVars, duplicate} @this{Object} */function G1() {
+  return wrapPointer(_emscripten_bind_G1_0(), P1);
+};;
+Module['G1'] = G1;
+
+// G2
+/** @suppress {undefinedVars, duplicate} @this{Object} */function G2() {
+  return wrapPointer(_emscripten_bind_G2_0(), P2);
+};;
+Module['G2'] = G2;
+
 function ensureRef(val) {
   // TODO: something else (nullptr)?
   if (typeof val === "undefined") {
@@ -994,6 +1006,6 @@ export {
   P2_Affine,
   PT,
   Pairing,
-  // G1,
-  // G2,
+  G1,
+  G2,
 };

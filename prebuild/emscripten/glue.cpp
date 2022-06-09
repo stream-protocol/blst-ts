@@ -523,3 +523,16 @@ void EMSCRIPTEN_KEEPALIVE emscripten_bind_Pairing___destroy___0(blst::Pairing* s
 
 }
 
+blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_G1_0() {
+  blst::P1 *p1 = (blst::P1 *) malloc(sizeof(blst::P1));
+  *p1 = blst::G1();
+
+  return p1;
+}
+
+blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_G2_0() {
+  blst::P2 *p2 = (blst::P2 *) malloc(sizeof(blst::P2));
+  *p2 = blst::G2();
+
+  return p2;
+}

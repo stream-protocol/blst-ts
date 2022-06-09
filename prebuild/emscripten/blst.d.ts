@@ -21,5 +21,5 @@ export const P1: P1Constructor;
 export const P2: P2Constructor;
 export const PT: PTConstructor;
 export const Pairing: PairingConstructor;
-// G1(): P1;
-// G2(): P2;
+export const G1: () => P1;
+export const G2: () => P2;
