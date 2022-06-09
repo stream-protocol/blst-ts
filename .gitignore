@@ -4,6 +4,8 @@ build
 dist
 node_modules
 prebuild/*.node
+prebuild/emscripten/blst.wasm
+prebuild/emscripten/blst.js
 
 npm-debug.log
 yarn-error.log

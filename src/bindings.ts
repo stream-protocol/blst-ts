@@ -3,8 +3,9 @@ export let blst: Blst;
 // Import & assign the respective binding module.
 switch (process.env["BINDING"]) {
   case "emscripten":
+    // TODO: factor out path
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    blst = require("../blst/build/blst");
+    blst = require("../prebuild/emscripten/blst");
     break;
   case "swig":
   default:
