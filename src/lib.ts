@@ -1,5 +1,8 @@
+import {container} from "tsyringe";
 import crypto from "crypto";
-import {blst, BLST_ERROR} from "./bindings";
+import {Binding, BLST_ERROR} from "./bindings";
+
+const {blst}: Binding = container.resolve(Binding);
 
 const HASH_OR_ENCODE = true;
 const DST = "BLS_SIG_BLS12381G2_XMD:SHA-256_SSWU_RO_POP_";

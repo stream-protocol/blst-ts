@@ -65,6 +65,8 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
-    "node-gyp": "^8.4.0"
+    "node-gyp": "^8.4.0",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.7.0"
   }
 }

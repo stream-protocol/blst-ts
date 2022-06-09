@@ -1,7 +1,10 @@
-import {blst} from "../../../src/bindings";
 import {maybeWaitForRuntime} from "../../utils";
 
-maybeWaitForRuntime(run);
+// TODO: manual binding import based on env var (?)
+// (re-usability between environments)
+import {blst} from "../../../src/emscripten";
+
+maybeWaitForRuntime(blst, run);
 
 function run(): void {
   describe("blst sample case", () => {
@@ -9,7 +12,7 @@ function run(): void {
       const msg = "assertion"; // this what we're signing
       const DST = "MY-DST"; // domain separation tag
 
-      type DataToSend = { pk_for_wire: Uint8Array; sig_for_wire: Uint8Array };
+      type DataToSend = {pk_for_wire: Uint8Array; sig_for_wire: Uint8Array};
 
       ////////////////////////////////////////////////////////////////////////
       // generate public key and signature

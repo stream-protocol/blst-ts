@@ -1,8 +1,9 @@
-import {blst, SecretKey} from "../../../src/bindings";
+import {SecretKey} from "../../../src/bindings";
 import {fromHex, runInstanceTestCases} from "../../utils";
+import {blst} from "../../../src/emscripten";
 import {maybeWaitForRuntime} from "../../utils";
 
-maybeWaitForRuntime(run);
+maybeWaitForRuntime(blst, run);
 
 function run(): void {
   describe("SecretKey", () => {

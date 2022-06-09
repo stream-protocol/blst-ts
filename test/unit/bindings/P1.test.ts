@@ -1,8 +1,9 @@
-import {blst, BLST_ERROR, P1, P1_Affine, P1Constructor} from "../../../src/bindings";
+import {BLST_ERROR, P1, P1_Affine, P1Constructor} from "../../../src/bindings";
 import {expectHex, fromHex, runInstanceTestCases} from "../../utils";
+import {blst} from "../../../src/emscripten";
 import {maybeWaitForRuntime} from "../../utils";
 
-maybeWaitForRuntime(run);
+maybeWaitForRuntime(blst, run);
 
 function run(): void {
   describe("P1", () => {

@@ -1,6 +1,6 @@
 import {expect} from "chai";
 import {Buffer} from "buffer";
-import {blst} from "../src/bindings";
+import {Blst} from "../src/bindings";
 
 interface BaseSerializable {
   serialize(): Uint8Array;
@@ -69,7 +69,7 @@ export function runInstanceTestCases<InstanceType extends {[key: string]: any}>(
   }
 }
 
-export function maybeWaitForRuntime(callback: () => void): void {
+export function maybeWaitForRuntime(blst: Blst, callback: () => void): void {
   if (typeof blst.onInitialized === "function") {
     blst.onInitialized(callback);
   } else {

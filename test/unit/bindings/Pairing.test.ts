@@ -1,8 +1,9 @@
-import {blst, Pairing} from "../../../src/bindings";
+import {Pairing} from "../../../src/bindings";
 import {fromHex, runInstanceTestCases} from "../../utils";
+import {blst} from "../../../src/emscripten";
 import {maybeWaitForRuntime} from "../../utils";
 
-maybeWaitForRuntime(run);
+maybeWaitForRuntime(blst, run);
 
 function run(): void {
   describe("Pairing", () => {
