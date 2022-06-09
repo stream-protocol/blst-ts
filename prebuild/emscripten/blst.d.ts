@@ -8,6 +8,8 @@ import {
   SecretKeyConstructor,
 } from "../../src/bindings";
 
+export const initialized: Promise<void>;
+
 // BLS12_381_G1: P1_Affine;
 // BLS12_381_NEG_G1: P1_Affine;
 // BLS12_381_G2: P2_Affine;

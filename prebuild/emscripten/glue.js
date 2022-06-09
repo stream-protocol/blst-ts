@@ -968,7 +968,21 @@ function ensureRef(val) {
   }
 }
 
+const initialized = new Promise(resolve => {
+  Module['onRuntimeInitialized'] = function() {
+    resolve();
+  };
+});
+
+function onInitialized(callback) {
+  initialized.then(callback).catch((e) => {
+    throw e;
+  });
+}
+
 export {
+  initialized,
+  onInitialized,
   // BLS12_381_G1,
   // BLS12_381_NEG_G1,
   // BLS12_381_G2,
