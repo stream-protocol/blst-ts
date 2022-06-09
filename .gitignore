@@ -3,7 +3,7 @@ coverage
 build
 dist
 node_modules
-prebuild/*.node
+prebuild/swig/*.node
 prebuild/emscripten/blst.wasm
 prebuild/emscripten/blst.js
 
