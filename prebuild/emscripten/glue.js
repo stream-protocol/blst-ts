@@ -992,7 +992,7 @@ function onInitialized(callback) {
   });
 }
 
-export {
+module.exports = {
   initialized,
   onInitialized,
   // BLS12_381_G1,
