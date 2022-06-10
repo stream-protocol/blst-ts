@@ -1,23 +1,18 @@
-import {inject, singleton} from "tsyringe";
+export let blst: Blst;
 
-@singleton()
-export class Binding {
-  readonly initialized: Promise<void>;
-  readonly onInitialized: (callback: () => void) => void;
-
-  constructor(@inject("blst") readonly blst: Blst) {
-    if (typeof blst.initialized !== "undefined") {
-      this.initialized = blst.initialized!;
-    } else {
-      this.initialized = Promise.resolve();
-    }
-
-    if (typeof blst.onInitialized !== "undefined") {
-      this.onInitialized = blst.onInitialized!;
-    } else {
-      this.onInitialized = callback => callback();
-    }
-  }
+// Import & assign the respective binding module.
+switch (process.env["BINDING"]) {
+  case "emscripten":
+    // TODO: factor out path
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    blst = require("../prebuild/emscripten/blst");
+    break;
+  case "swig":
+  default:
+    // eslint-disable-next-line no-case-declarations,@typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires
+    const {getBinaryPath} = require("./scripts/paths");
+    // eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-unsafe-call
+    blst = require(getBinaryPath());
 }
 
 interface MaybeAsyncModule {
@@ -25,7 +20,7 @@ interface MaybeAsyncModule {
   onInitialized: (callback: () => void) => void;
 }
 
-export interface Blst extends MaybeAsyncModule {
+export interface Blst extends Partial<MaybeAsyncModule> {
   // BLS12_381_G1: P1_Affine;
   // BLS12_381_NEG_G1: P1_Affine;
   // BLS12_381_G2: P2_Affine;

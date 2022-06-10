@@ -1,5 +1,4 @@
-require("reflect-metadata");
-const bls = require("../../../../dist/index");
+const bls = require("../../../../dist/lib");
 
 const msg = Buffer.from("sample-msg");
 

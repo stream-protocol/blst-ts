@@ -1,10 +1,7 @@
+import {blst} from "../../../src/bindings";
 import {maybeWaitForRuntime} from "../../utils";
 
-// TODO: manual binding import based on env var (?)
-// (re-usability between environments)
-import {blst} from "../../../src/emscripten";
-
-maybeWaitForRuntime(blst, run);
+maybeWaitForRuntime(run);
 
 function run(): void {
   describe("blst sample case", () => {
