@@ -19,7 +19,7 @@ To build for web assembly using emscripten:
 /path/to/emsdk/emsdk activate
 source /path/to/emsdk/emsdk_env.sh
 
-CROSS_COMPILE=em CFLAGS="-o ./prebuild/emscripten/blst.js --post-js ./prebuild/emscripten/glue.js ./prebuild/emscripten/blst_glue_wrapper.cpp" ./blst/build.sh
+CROSS_COMPILE=em CFLAGS="-o ./prebuild/emscripten/blst.js --pre-js ./prebuild/emscripten/pre.js --post-js ./prebuild/emscripten/post.js ./prebuild/emscripten/blst_glue_wrapper.cpp" ./blst/build.sh
 ```
 
 Use webpack dev server to watch for changes and rebuild:
