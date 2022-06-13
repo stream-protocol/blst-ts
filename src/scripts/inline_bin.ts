@@ -15,6 +15,6 @@ if (outputPath === "") {
 const data = fs.readFileSync(inputPath);
 const js_contents = `
 import { Buffer } from "buffer";
-export default Buffer.from("${Buffer.from(data).toString("base64")}", "base64").buffer;`
+export default Buffer.from("${Buffer.from(data).toString("base64")}", "base64").buffer;`;
 
 fs.writeFileSync(outputPath, js_contents);

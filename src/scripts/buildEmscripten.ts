@@ -35,9 +35,11 @@ const args: string[] = [
 const opts = {cwd: ROOT_DIR};
 exec(cmd, args, opts)
   .then(() => {
+    // eslint-disable-next-line no-console
     console.log("Emscripten bindings built!");
   })
   .catch((reason: Error) => {
+    // eslint-disable-next-line no-console
     console.error(reason);
     process.exit(1);
   });

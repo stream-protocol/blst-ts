@@ -18,7 +18,6 @@ function run(): void {
 
     const sk = new blst.SecretKey();
     sk.keygen(sample.keygen);
-    console.log(sk);
     const p1 = new blst.P1(sk);
     // const p1 = new blst.P1(sample.p1);
     const p1Affine = new blst.P1_Affine(p1);
