@@ -12,7 +12,7 @@ git submodule update --init --recursive
 ### Using emscripten bindings
 
 #### `package.json`:
-```json
+```javascript
 depencencies: {
   "@chainsafe/blst": "git+https://github.com/fechai/blst-ts#feat/browser-support",
   ...
