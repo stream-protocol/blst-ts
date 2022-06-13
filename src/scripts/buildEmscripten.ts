@@ -16,13 +16,17 @@ const cflags =
   // Prepends blst_blue_wrapper.cpp to source files list.
   "/src/prebuild/emscripten/blst_glue_wrapper.cpp";
 
-// eslint-disable prettier/prettier
 const args: string[] = [
-  "run", "--rm",
-  "-v", `${ROOT_DIR}:/src`,
-  "-u", `${uid}:${gid}`,
-  "-e", "CROSS_COMPILE=em",
-  "-e", `CFLAGS=${cflags}`,
+  "run",
+  "--rm",
+  "-v",
+  `${ROOT_DIR}:/src`,
+  "-u",
+  `${uid}:${gid}`,
+  "-e",
+  "CROSS_COMPILE=em",
+  "-e",
+  `CFLAGS=${cflags}`,
   `emscripten/emsdk:${tag}`,
   "/src/blst/build.sh",
 ];

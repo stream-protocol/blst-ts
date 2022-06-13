@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+// eslint-disable-next-line prefer-const
 let [inputPath, outputPath = ""]: string[] = process.argv.slice(2);
 
 if (outputPath === "") {
