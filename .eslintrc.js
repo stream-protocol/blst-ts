@@ -89,5 +89,5 @@ module.exports = {
       },
     },
   ],
-  "ignorePatterns": ["pre.js", "post.js", "webpack.config.js"],
+  "ignorePatterns": ["pre.js", "post.js", "webpack.config.js", "karma.conf.js"],
 };
