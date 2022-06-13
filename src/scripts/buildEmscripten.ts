@@ -30,7 +30,6 @@ const args: string[] = [
   `emscripten/emsdk:${tag}`,
   "/src/blst/build.sh",
 ];
-// eslint-enable prettier/prettier
 
 const opts = {cwd: ROOT_DIR};
 exec(cmd, args, opts)
