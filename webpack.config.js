@@ -55,11 +55,6 @@ module.exports = {
   experiments: {
     topLevelAwait: true,
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env.BINDING": JSON.stringify("emscripten"),
-    })
-  ],
   ignoreWarnings: [
     {
       module: new RegExp("./src/bindings.ts"),
