@@ -43,15 +43,11 @@ blst::P1_Affine* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_Affine_P1_Affine_2(cons
 }
 
 blst::P1_Affine* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_Affine_dup_0(blst::P1_Affine* self) {
-  blst::P1_Affine *dup = (blst::P1_Affine *) malloc(sizeof(blst::P1_Affine));
-  new (dup) blst::P1_Affine(self->dup());
-  return dup;
+  return new blst::P1_Affine(self->dup());
 }
 
 blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_Affine_to_jacobian_0(blst::P1_Affine* self) {
-  blst::P1 *jacobian = (blst::P1 *) malloc(sizeof(blst::P1));
-  new (jacobian) blst::P1(self->to_jacobian());
-  return jacobian;
+  return new blst::P1(self->to_jacobian());
 }
 
 void EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_Affine_serialize_1(blst::P1_Affine* self, blst::byte* out) {
@@ -109,21 +105,15 @@ blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_P1_2(const blst::byte* input, 
 }
 
 blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_P1_generator_0() {
-  blst::P1 *generated = (blst::P1 *) malloc(sizeof(blst::P1));
-  new (generated) blst::P1(blst::P1::generator());
-  return generated;
+  return new blst::P1(blst::P1::generator());
 }
 
 blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_dup_0(blst::P1* self) {
-  blst::P1 *dup = (blst::P1 *) malloc(sizeof(blst::P1));
-  new (dup) blst::P1(self->dup());
-  return dup;
+  return new blst::P1(self->dup());
 }
 
 blst::P1_Affine* EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_to_affine_0(blst::P1* self) {
-  blst::P1_Affine *affine = (blst::P1_Affine *) malloc(sizeof(blst::P1_Affine));
-  new (affine) blst::P1_Affine(self->to_affine());
-  return affine;
+  return new blst::P1_Affine(self->to_affine());
 }
 
 void EMSCRIPTEN_KEEPALIVE emscripten_bind_P1_serialize_1(blst::P1* self, blst::byte* out) {
@@ -218,15 +208,11 @@ blst::P2_Affine* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_Affine_P2_Affine_2(cons
 }
 
 blst::P2_Affine* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_Affine_dup_0(blst::P2_Affine* self) {
-  blst::P2_Affine *dup = (blst::P2_Affine *) malloc(sizeof(blst::P2_Affine));
-  new (dup) blst::P2_Affine(self->dup());
-  return dup;
+  return new blst::P2_Affine(self->dup());
 }
 
 blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_Affine_to_jacobian_0(blst::P2_Affine* self) {
-  blst::P2 *jacobian = (blst::P2 *) malloc(sizeof(blst::P2));
-  new (jacobian) blst::P2(self->to_jacobian());
-  return jacobian;
+  return new blst::P2(self->to_jacobian());
 }
 
 void EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_Affine_serialize_1(blst::P2_Affine* self, blst::byte* out) {
@@ -284,21 +270,15 @@ blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_P2_2(const blst::byte* input, 
 }
 
 blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_P2_generator_0() {
-  blst::P2 *generated = (blst::P2 *) malloc(sizeof(blst::P2));
-  new (generated) blst::P2(blst::P2::generator());
-  return generated;
+  return new blst::P2(blst::P2::generator());
 }
 
 blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_dup_0(blst::P2* self) {
-  blst::P2 *dup = (blst::P2 *) malloc(sizeof(blst::P2));
-  new (dup) blst::P2(self->dup());
-  return dup;
+  return new blst::P2(self->dup());
 }
 
 blst::P2_Affine* EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_to_affine_0(blst::P2* self) {
-  blst::P2_Affine *affine = (blst::P2_Affine *) malloc(sizeof(blst::P2_Affine));
-  new (affine) blst::P2_Affine(self->to_affine());
-  return affine;
+  return new blst::P2_Affine(self->to_affine());
 }
 
 void EMSCRIPTEN_KEEPALIVE emscripten_bind_P2_serialize_1(blst::P2* self, blst::byte* out) {
@@ -440,9 +420,7 @@ blst::PT* EMSCRIPTEN_KEEPALIVE emscripten_bind_PT_PT_2(const blst::P1_Affine* p,
 }
 
 blst::PT* EMSCRIPTEN_KEEPALIVE emscripten_bind_PT_dup_0(blst::PT* self) {
-  blst::PT *dup = (blst::PT *) malloc(sizeof(blst::PT));
-  new (dup) blst::PT(self->dup());
-  return dup;
+  return new blst::PT(self->dup());
 }
 
 bool EMSCRIPTEN_KEEPALIVE emscripten_bind_PT_is_one_0(blst::PT* self) {
@@ -474,8 +452,7 @@ bool EMSCRIPTEN_KEEPALIVE emscripten_bind_PT_finalverify_2(blst::PT* self, const
 }
 
 blst::PT* EMSCRIPTEN_KEEPALIVE emscripten_bind_PT_one_0(blst::PT* self) {
-  blst::PT *one = (blst::PT *) malloc(sizeof(blst::PT));
-  *one = self-> one();
+  blst::PT *one = new blst::PT(self->one());
   return one;
 }
 
@@ -524,15 +501,13 @@ void EMSCRIPTEN_KEEPALIVE emscripten_bind_Pairing___destroy___0(blst::Pairing* s
 }
 
 blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_G1_0() {
-  blst::P1 *p1 = (blst::P1 *) malloc(sizeof(blst::P1));
-  *p1 = blst::G1();
-
-  return p1;
+  blst::P1* g1 = new blst::P1();
+  *g1 = blst::G1();
+  return g1;
 }
 
 blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_G2_0() {
-  blst::P2 *p2 = (blst::P2 *) malloc(sizeof(blst::P2));
-  *p2 = blst::G2();
-
-  return p2;
+  blst::P2* g2 = new blst::P2();
+  *g2 = blst::G2();
+  return g2;
 }
