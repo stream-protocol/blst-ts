@@ -29,6 +29,8 @@ const args: string[] = [
   `CFLAGS=${cflags}`,
   `emscripten/emsdk:${tag}`,
   "/src/blst/build.sh",
+  "-link",
+  "-no-archive",
 ];
 
 const opts = {cwd: ROOT_DIR};
