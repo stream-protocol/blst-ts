@@ -501,13 +501,9 @@ void EMSCRIPTEN_KEEPALIVE emscripten_bind_Pairing___destroy___0(blst::Pairing* s
 }
 
 blst::P1* EMSCRIPTEN_KEEPALIVE emscripten_bind_G1_0() {
-  blst::P1* g1 = new blst::P1();
-  *g1 = blst::G1();
-  return g1;
+  return new blst::P1(blst::G1());
 }
 
 blst::P2* EMSCRIPTEN_KEEPALIVE emscripten_bind_G2_0() {
-  blst::P2* g2 = new blst::P2();
-  *g2 = blst::G2();
-  return g2;
+  return new blst::P2(blst::G2());
 }
