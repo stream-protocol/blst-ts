@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import {PACKAGE_JSON_PATH} from "./paths";
 import {ensureDirFromFilepath} from "./paths_node";
 
-const githubReleasesDownloadUrl = "https://github.com/ChainSafe/blst-ts/releases/download";
+const githubReleasesDownloadUrl = "https://github.com/fetchai/blst-ts/releases/download";
 
 export async function downloadReleaseAsset(assetName: string, binaryPath: string): Promise<void> {
   // eslint-disable-next-line

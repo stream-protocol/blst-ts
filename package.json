@@ -25,15 +25,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChainSafe/blst-ts.git"
+    "url": "git+https://github.com/fetchai/blst-ts.git"
   },
   "keywords": [],
   "author": "ChainSafe Systems",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ChainSafe/blst-ts/issues"
+    "url": "https://github.com/fetchai/blst-ts/issues"
   },
-  "homepage": "https://github.com/ChainSafe/blst-ts#readme",
+  "homepage": "https://github.com/fetchai/blst-ts#readme",
   "devDependencies": {
     "@types/chai": "^4.2.13",
     "@types/js-yaml": "^4.0.5",
