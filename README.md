@@ -11,10 +11,16 @@ git submodule update --init --recursive
 
 ### Using emscripten bindings
 
+```bash
+yarn add @fetchai/blst-ts
+# or
+npm install --save @fetchai/blst-ts
+```
+
 #### `package.json`:
 ```javascript
 depencencies: {
-  "@chainsafe/blst": "git+https://github.com/fechai/blst-ts#feat/browser-support",
+  "@fetchai/blst-ts": "^0.3.1",
   ...
 }
 ```
