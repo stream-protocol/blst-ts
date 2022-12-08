@@ -20,7 +20,7 @@ npm install --save @stream-protocol/blst-ts
 #### `package.json`:
 ```javascript
 depencencies: {
-  "@fetchai/blst-ts": "^0.3.1",
+  "@stream-protocol/blst-ts": "^0.3.1",
   ...
 }
 ```
