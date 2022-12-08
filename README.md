@@ -12,9 +12,9 @@ git submodule update --init --recursive
 ### Using emscripten bindings
 
 ```bash
-yarn add @fetchai/blst-ts
+yarn add @stream-protocol/blst-ts
 # or
-npm install --save @fetchai/blst-ts
+npm install --save @stream-protocol/blst-ts
 ```
 
 #### `package.json`:
